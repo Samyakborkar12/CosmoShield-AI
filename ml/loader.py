@@ -1,16 +1,24 @@
 from ml.config import ACTIVE_MODEL
 
+def load_lstm():
+    return "Dummy LSTM Model"
+
+def load_transformer():
+    return "Dummy Transformer Model"
+
+def load_random_forest():
+    return "Dummy Random Forest Model"
+
+MODELS = {
+    "lstm": load_lstm,
+    "transformer": load_transformer,
+    "random_forest": load_random_forest
+}
 
 def load_model():
+    loader = MODELS.get(ACTIVE_MODEL)
 
-    if ACTIVE_MODEL == "lstm":
-        return "LSTM Model Loaded"
-    
-    elif ACTIVE_MODEL == "transformer":
-        return "Transformer Model Loded"
-    
-    elif ACTIVE_MODEL == "random_forest":
-        return "Random Forest Model Loaded"
-    
-    else:
-        raise ValueError("Unsupported Model")
+    if loader is None:
+        raise ValueError("Unsupported model")
+
+    return loader()

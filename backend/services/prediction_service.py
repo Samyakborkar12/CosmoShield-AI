@@ -1,13 +1,14 @@
+from ml.loader import load_model
+from ml.predictor import predict
+
 def predict_radiation(data):
-    """
-    Temporary prediction.
-    Later this function will call the LSTM model.
-    """
+
+    model = load_model()
+
+    prediction = predict(model, data)
 
     return {
         "status": "success",
-        "model": "Dummy Model",
-        "radiation":5.72,
-        "risk": "Medium",
+        "prediction": prediction,
         "received_data": data
     }
