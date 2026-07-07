@@ -3,6 +3,7 @@ from routes.home import home
 from routes.health import health
 from database.schema import create_tables
 from routes.predict import predict
+from database.prediction_schema import create_prediction_table
 
 app = Flask(
     __name__,
@@ -20,4 +21,6 @@ def dashboard():
 
 if __name__ == "__main__":
     create_tables()
+    create_prediction_table()
+    
     app.run(debug=True)
