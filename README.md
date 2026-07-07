@@ -232,12 +232,21 @@ Special thanks to:
 
 ---
 
-## 📌 Academic Integrity
+---
 
-This project was developed by Team Pulse X for educational and hackathon purposes.
+# 📌 Academic Integrity
 
-You are welcome to learn from the codebase in accordance with the project license. Please do not submit this project, or substantial parts of it, as your own work in academic courses, competitions, or hackathons.
+CosmoShield AI is an original project developed by **Team Pulse X** for educational, research, and hackathon purposes.
 
+We encourage students, developers, and researchers to explore the project, learn from its implementation, and contribute in accordance with the project's license.
+
+However, please **do not copy, rebrand, or submit this project—or substantial portions of it—as your own work** in academic assignments, competitions, hackathons, or professional portfolios.
+
+If you build upon or reference this project, we kindly request that you provide appropriate attribution to the original authors.
+
+Thank you for respecting the efforts of the team and supporting ethical software development.
+
+---
 ---
 <div align="center">
 
