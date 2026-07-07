@@ -232,6 +232,13 @@ Special thanks to:
 
 ---
 
+## 📌 Academic Integrity
+
+This project was developed by Team Pulse X for educational and hackathon purposes.
+
+You are welcome to learn from the codebase in accordance with the project license. Please do not submit this project, or substantial parts of it, as your own work in academic courses, competitions, or hackathons.
+
+---
 <div align="center">
 
 ### ⭐ If you like this project, consider giving it a Star!
