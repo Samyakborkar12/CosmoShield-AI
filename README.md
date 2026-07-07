@@ -198,14 +198,18 @@ python backend/app.py
 
 ---
 
-# 👨‍💻 Team
+# 👥 Team
 
-**Team Name:** CosmoShield AI
+**Team Name:** Pulse X
 
-Contributors:
+Meet the team behind **CosmoShield AI**, working together to build an AI-powered space radiation prediction system for ISRO's geostationary satellites.
 
-- Samyak Amardeep Borkar *(Team Lead & Backend Developer)*
-- Add remaining team members here.
+| Member | Role | Responsibilities |
+|---------|------|------------------|
+| **Samyak Amardeep Borkar** | Team Lead • Backend Developer | Project architecture, Backend Development, API Development, Machine Learning Integration, GitHub Management |
+| **Aaryan Nitin Chavan** | Frontend Developer | User Interface Development, Dashboard Implementation, Frontend Integration |
+| **Shravani Sagar Dhulup** | Research & Documentation Lead | Technical Research, Scientific Validation, Documentation, Presentation Content |
+| **Shreya Ganesh Birari** | UI/UX Designer & Quality Assurance (QA) | User Experience Design, Interface Design, Testing, Bug Reporting, Usability Validation |
 
 ---
 
