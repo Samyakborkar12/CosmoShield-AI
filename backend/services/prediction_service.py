@@ -1,17 +1,27 @@
+from backend.utils.validation import validate_input
+
+from backend.database.prediction_db import save_prediction
+
 from ml.loader import load_model
 from ml.predictor import predict
-from database.prediction_db import save_prediction
 
 
 def predict_radiation(data):
 
-    # Load active model
+    valid, result = validate_input(data)
+
+    if not valid:
+        return {
+            "status": "error",
+            "message": result
+        }
+
+    data = result
+
     model = load_model()
 
-    # Predict
     prediction = predict(model, data)
 
-    # Save prediction to database
     save_prediction(
         satellite=data["satellite"],
         energy=data["energy"],
@@ -19,9 +29,9 @@ def predict_radiation(data):
         risk=prediction["risk"]
     )
 
-    # Return API response
     return {
         "status": "success",
-        "prediction": prediction,
-        "received_data": data
+        "model": prediction["model"],
+        "radiation": prediction["radiation"],
+        "risk": prediction["risk"]
     }

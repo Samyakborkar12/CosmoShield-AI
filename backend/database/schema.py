@@ -1,18 +1,19 @@
-from database.db import get_connnection
+from backend.database.db import get_connection
+
 
 def create_tables():
-    conn = get_connnection()
+
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS predictions(
+        CREATE TABLE IF NOT EXISTS satellites(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-                   satellite TEXT,
-                   radiation REAL,
-                   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP     
+            satellite TEXT NOT NULL,
+            radiation REAL NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     """)
 
     conn.commit()
     conn.close()
-    

@@ -1,7 +1,9 @@
 from flask import Blueprint, request, jsonify
-from services.prediction_service import predict_radiation
+
+from backend.services.prediction_service import predict_radiation
 
 predict = Blueprint("predict", __name__)
+
 
 @predict.route("/api/predict", methods=["POST"])
 def predict_api():

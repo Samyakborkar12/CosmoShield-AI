@@ -1,9 +1,9 @@
-import sqlite3
+from backend.database.db import get_connection
 
 
 def save_prediction(satellite, energy, radiation, risk):
 
-    conn = sqlite3.connect("cosmoshield.db")
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""

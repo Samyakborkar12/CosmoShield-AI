@@ -1,15 +1,11 @@
-# Active model currently used for prediction
-ACTIVE_MODEL = "lstm"
+# Active model
 
-# Folder containing trained models 
-MODEL_DIRECTORY = "models/"
+ACTIVE_MODEL = "transformer"
 
-#Supported prediction models
-SUPPORTED_MODELS = [
-    "lstm",
-    "transformer",
-    "random_forest"
-]
+# Future model paths
 
-# Minium confidence required 
-CONFIDENCE_THRESHOLD = 0.80
+MODEL_PATHS = {
+    "transformer": "models/transformer.keras",
+    "lstm": "models/lstm.keras",
+    "random_forest": "models/random_forest.pkl"
+}

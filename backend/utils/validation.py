@@ -1,20 +1,22 @@
-def validate_prediction_input(data):
-    """
-    Validate prediction request data.
-    """
+REQUIRED_FIELDS = [
+    "satellite",
+    "energy"
+]
 
-    if not data:
-        return False, "Request body is empty."
 
-    if "satellite" not in data:
-        return False, "Satellite is required."
+def validate_input(data):
 
-    if "energy" not in data:
-        return False, "Energy is required."
+    if data is None:
+        return False, "No JSON data received."
+
+    for field in REQUIRED_FIELDS:
+
+        if field not in data:
+            return False, f"Missing field: {field}"
 
     try:
         data["energy"] = float(data["energy"])
     except (ValueError, TypeError):
-        return False, "Energy must be a numeric value."
+        return False, "Energy must be a number."
 
     return True, data
