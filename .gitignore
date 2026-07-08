@@ -1,8 +1,16 @@
-venv/
-__pycache__/
-*.pyc
-.env
-
+# Datasets
 dataset/raw/
 dataset/processed/
 dataset/merged/
+
+# Trained models
+ml/model/*.keras
+ml/model/*.pkl
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
