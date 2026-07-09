@@ -1,11 +1,13 @@
-# Active model
+ACTIVE_MODEL = "lstm"
 
-ACTIVE_MODEL = "transformer"
+SEQUENCE_LENGTH = 12
 
-# Future model paths
+BATCH_SIZE = 64
 
-MODEL_PATHS = {
-    "transformer": "models/transformer.keras",
-    "lstm": "models/lstm.keras",
-    "random_forest": "models/random_forest.pkl"
-}
+EPOCHS = 20
+
+LEARNING_RATE = 0.001
+
+MODEL_PATH = "ml/model/lstm.keras"
+
+SCALER_PATH = "ml/model/scaler.pkl"
