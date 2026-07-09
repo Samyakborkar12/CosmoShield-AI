@@ -1,21 +1,37 @@
-def predict(model, data):
+import numpy as np
 
-    energy = data["energy"]
+from ml.loader import load_ml_assets
+from ml.risk import calculate_risk
 
-    if energy < 3:
-        radiation = 2.15
-        risk = "Low"
 
-    elif energy < 7:
-        radiation = 5.72
-        risk = "Medium"
+def predict(data):
 
-    else:
-        radiation = 9.84
-        risk = "High"
+    model, scaler = load_ml_assets()
+
+    X = np.array([[
+        data["imf"],
+        data["bx"],
+        data["by"],
+        data["bz"],
+        data["speed"],
+        data["density"],
+        data["temperature"]
+    ]])
+
+    X = scaler.transform(X)
+
+    X = np.repeat(X, 12, axis=0)
+
+    X = X.reshape((1, 12, 7))
+
+    prediction = model.predict(X, verbose=0)
+
+    radiation = float(prediction[0][0])
+
+    risk = calculate_risk(radiation)
 
     return {
-        "model": model,
+        "model": "LSTM",
         "radiation": radiation,
         "risk": risk
     }

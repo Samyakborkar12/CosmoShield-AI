@@ -1,38 +1,19 @@
-from ml.config import ACTIVE_MODEL
+from tensorflow.keras.models import load_model
+import joblib
+
+from ml.config import MODEL_PATH, SCALER_PATH
+
+model = None
+scaler = None
 
 
-def load_transformer():
-    return "Dummy Transformer Model"
+def load_ml_assets():
+    global model, scaler
 
+    if model is None:
+        model = load_model(MODEL_PATH)
 
-def load_lstm():
-    return "Dummy LSTM Model"
+    if scaler is None:
+        scaler = joblib.load(SCALER_PATH)
 
-
-def load_random_forest():
-    return "Dummy Random Forest Model"
-
-
-MODELS = {
-    "transformer": load_transformer,
-    "lstm": load_lstm,
-    "random_forest": load_random_forest
-}
-
-
-_loaded_model = None
-
-
-def load_model():
-    global _loaded_model
-
-    if _loaded_model is None:
-
-        loader = MODELS.get(ACTIVE_MODEL)
-
-        if loader is None:
-            raise ValueError(f"Unsupported model: {ACTIVE_MODEL}")
-
-        _loaded_model = loader()
-
-    return _loaded_model
+    return model, scaler
