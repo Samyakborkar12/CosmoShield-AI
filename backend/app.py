@@ -6,11 +6,13 @@ from backend.routes.predict import predict
 
 from backend.database.schema import create_tables
 from backend.database.prediction_schema import create_prediction_table
+from backend.database.init_db import initialize_database
 
 app = Flask(
     __name__,
     template_folder="../frontend/templates",
     static_folder="../frontend/static"
+    initialize_database()
 )
 
 app.register_blueprint(home)

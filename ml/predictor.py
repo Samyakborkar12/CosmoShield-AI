@@ -1,4 +1,6 @@
+from ml.config import SEQUENCE_LENGTH
 import numpy as np
+
 
 from ml.loader import load_ml_assets
 from ml.risk import calculate_risk
@@ -20,9 +22,9 @@ def predict(data):
 
     X = scaler.transform(X)
 
-    X = np.repeat(X, 12, axis=0)
+    X = np.repeat(X, SEQUENCE_LENGTH, axis=0)
 
-    X = X.reshape((1, 12, 7))
+    X = X.reshape((1, SEQUENCE_LENGTH, 7))
 
     prediction = model.predict(X, verbose=0)
 

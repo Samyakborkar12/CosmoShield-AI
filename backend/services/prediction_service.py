@@ -1,8 +1,6 @@
 from backend.utils.validation import validate_input
-
 from backend.database.prediction_db import save_prediction
 
-from ml.loader import load_model
 from ml.predictor import predict
 
 
@@ -18,9 +16,7 @@ def predict_radiation(data):
 
     data = result
 
-    model = load_model()
-
-    prediction = predict(model, data)
+    prediction = predict(data)
 
     save_prediction(
         satellite=data["satellite"],

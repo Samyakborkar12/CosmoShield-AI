@@ -1,6 +1,13 @@
 REQUIRED_FIELDS = [
     "satellite",
-    "energy"
+    "energy",
+    "imf",
+    "bx",
+    "by",
+    "bz",
+    "speed",
+    "density",
+    "temperature"
 ]
 
 
@@ -14,9 +21,24 @@ def validate_input(data):
         if field not in data:
             return False, f"Missing field: {field}"
 
-    try:
-        data["energy"] = float(data["energy"])
-    except (ValueError, TypeError):
-        return False, "Energy must be a number."
+    numeric_fields = [
+        "energy",
+        "imf",
+        "bx",
+        "by",
+        "bz",
+        "speed",
+        "density",
+        "temperature"
+    ]
+
+    for field in numeric_fields:
+
+        try:
+            data[field] = float(data[field])
+
+        except (ValueError, TypeError):
+
+            return False, f"{field} must be numeric."
 
     return True, data
