@@ -4,29 +4,23 @@ from backend.routes.home import home
 from backend.routes.health import health
 from backend.routes.predict import predict
 
-from backend.database.schema import create_tables
-from backend.database.prediction_schema import create_prediction_table
 from backend.database.init_db import initialize_database
 
 app = Flask(
     __name__,
     template_folder="../frontend/templates",
     static_folder="../frontend/static"
-    initialize_database()
 )
+
+initialize_database()
 
 app.register_blueprint(home)
 app.register_blueprint(health)
 app.register_blueprint(predict)
 
-
 @app.route("/")
 def dashboard():
     return render_template("index.html")
 
-
 if __name__ == "__main__":
-    create_tables()
-    create_prediction_table()
-
     app.run(debug=True)
