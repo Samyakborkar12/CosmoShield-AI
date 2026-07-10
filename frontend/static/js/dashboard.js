@@ -200,3 +200,62 @@ function updateDashboard(data){
         risk.classList.add("high");
 
 }
+async function loadPredictionHistory(){
+
+    try{
+
+        const response = await fetch("/api/history");
+
+        const result = await response.json();
+
+        if(result.status !== "success") return;
+
+        const tbody = document.getElementById("historyBody");
+
+        tbody.innerHTML = "";
+
+        result.data.forEach(item=>{
+
+            tbody.innerHTML += `
+            <tr>
+
+                <td>${item.time}</td>
+
+                <td>${item.satellite}</td>
+
+                <td>${Number(item.radiation).toFixed(3)} MeV</td>
+
+                <td>${item.risk}</td>
+
+                <td>LSTM</td>
+
+            </tr>
+            `;
+
+        });
+
+        if(result.data.length===0){
+
+            tbody.innerHTML=`
+            <tr>
+
+            <td colspan="5">
+
+            No prediction available.
+
+            </td>
+
+            </tr>
+            `;
+
+        }
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
