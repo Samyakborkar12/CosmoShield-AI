@@ -4,11 +4,24 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>CosmoShield AI</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+rel="stylesheet">
 
 <link rel="stylesheet"
 href="{{ url_for('static', filename='css/style.css') }}">
@@ -17,17 +30,21 @@ href="{{ url_for('static', filename='css/style.css') }}">
 
 <body>
 
-<!-- ===========================
-        NAVBAR
-============================ -->
+<div class="background-grid"></div>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="blur blur-1"></div>
+
+<div class="blur blur-2"></div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg">
 
 <div class="container">
 
-<a class="navbar-brand" href="#">
+<a class="navbar-brand" href="/">
 
-🚀 CosmoShield AI
+CosmoShield AI
 
 </a>
 
@@ -40,16 +57,17 @@ data-bs-target="#menu">
 
 </button>
 
-<div class="collapse navbar-collapse"
+<div
+class="collapse navbar-collapse"
 id="menu">
 
-<ul class="navbar-nav ms-auto">
-
+ <ul class="navbar-nav ms-auto">
 <li class="nav-item">
 
-<a class="nav-link" href="#">
+<a class="nav-link"
+href="#mission">
 
-Home
+Mission
 
 </a>
 
@@ -58,20 +76,9 @@ Home
 <li class="nav-item">
 
 <a class="nav-link"
-href="/dashboard">
+href="#workflow">
 
-Dashboard
-
-</a>
-
-</li>
-
-<li class="nav-item">
-
-<a class="nav-link"
-href="#technology">
-
-Technology
+Workflow
 
 </a>
 
@@ -88,6 +95,18 @@ About
 
 </li>
 
+<li class="nav-item">
+
+<a
+href="/dashboard"
+class="btn-nav">
+
+Launch Dashboard
+
+</a>
+
+</li>
+
 </ul>
 
 </div>
@@ -96,9 +115,7 @@ About
 
 </nav>
 
-<!-- ===========================
-        HERO
-============================ -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -108,354 +125,62 @@ About
 
 <div class="col-lg-6">
 
+<div class="hero-tag">
+
+SPACE WEATHER INTELLIGENCE
+
+</div>
+
 <h1>
 
 Protecting Satellites
 
-<br>
-
-Using Artificial Intelligence
+Before Space Weather Strikes.
 
 </h1>
 
 <p>
 
 CosmoShield AI predicts energetic particle
-radiation using NASA space weather data,
-LSTM neural networks,
-and intelligent mission risk analysis.
+radiation using historical space weather
+observations and deep learning,
+helping satellite operators make
+better mission decisions.
 
 </p>
 
-<a href="/dashboard"
+<div class="hero-buttons">
+
+<a
+href="/dashboard"
 class="btn-main">
 
-Launch Dashboard →
+Launch Dashboard
 
 </a>
 
-</div>
+<a
+href="#workflow"
+class="btn-secondary">
 
-<div class="col-lg-6 hero-image text-center">
+Explore Workflow
 
-<img
+</a>
 
-src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=1200"
-
-class="img-fluid">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===========================
-        FEATURES
-============================ -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-
-Why CosmoShield AI?
-
-</h2>
-
-<p>
-
-AI Powered Space Weather Intelligence Platform
-
-</p>
-
-</div>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-
-<div class="feature-card">
-
-<h2>
-
-⚡
-
-</h2>
-
-<h4>
-
-AI Radiation Prediction
-
-</h4>
-
-<p>
-
-Predict energetic particle radiation
-before satellite systems are affected.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="feature-card">
-
-<h2>
-
-🛰
-
-</h2>
-
-<h4>
-
-Satellite Protection
-
-</h4>
-
-<p>
-
-Support mission planning
-using intelligent risk analysis.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="feature-card">
-
-<h2>
-
-📊
-
-</h2>
-
-<h4>
-
-Mission Dashboard
-
-</h4>
-
-<p>
-
-Interactive AI dashboard
-with live prediction
-and visualization.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===== PART 2 STARTS BELOW ===== -->
- <!-- ===========================
-        HOW IT WORKS
-============================ -->
-
-<section class="section" id="about">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>How CosmoShield AI Works</h2>
-
-<p>From Space Weather Data to Intelligent Satellite Protection</p>
-
-</div>
-
-<div class="row text-center g-4">
-
-<div class="col-md-3">
-
-<div class="feature-card">
-
-<h1>🛰</h1>
-
-<h4>Collect Data</h4>
-
-<p>
-
-Live solar wind and magnetic field parameters are collected from NASA OMNI datasets.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="feature-card">
-
-<h1>🧠</h1>
-
-<h4>AI Analysis</h4>
-
-<p>
-
-An LSTM Neural Network analyzes historical space weather patterns.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="feature-card">
-
-<h1>⚠️</h1>
-
-<h4>Risk Prediction</h4>
-
-<p>
-
-The model predicts energetic particle radiation and mission risk.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="feature-card">
-
-<h1>🛡</h1>
-
-<h4>Protect Mission</h4>
-
-<p>
-
-Mission operators receive intelligent alerts before dangerous events.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===========================
-        TECHNOLOGY
-============================ -->
-
-<section class="section" id="technology">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Technology Stack</h2>
-
-<p>Built using modern AI & Space Technology</p>
-
-</div>
-
-<div class="text-center">
-
-<span class="tech-badge">🛰 NASA OMNI</span>
-
-<span class="tech-badge">🌎 NOAA SWPC</span>
-
-<span class="tech-badge">🧠 TensorFlow</span>
-
-<span class="tech-badge">🤖 LSTM AI</span>
-
-<span class="tech-badge">🐍 Python</span>
-
-<span class="tech-badge">⚡ Flask</span>
-
-<span class="tech-badge">💾 SQLite</span>
-
-<span class="tech-badge">📊 Chart.js</span>
-
-<span class="tech-badge">🌐 HTML5</span>
-
-<span class="tech-badge">🎨 CSS3</span>
-
-<span class="tech-badge">⚙ JavaScript</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===========================
-        ABOUT PROJECT
-============================ -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="row align-items-center">
-
-<div class="col-lg-6">
-
-<img
-
-src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200"
-
-class="img-fluid rounded shadow">
-
+ </div>
 </div>
 
 <div class="col-lg-6">
 
-<h2>
+<div class="hero-visual">
 
-About CosmoShield AI
+<div class="earth"></div>
 
-</h2>
+<div class="orbit"></div>
 
-<p class="mt-4">
+<div class="satellite"></div>
 
-CosmoShield AI is an AI-powered Space Weather Prediction Platform
-developed for the BAH Hackathon 2026.
-
-Our system predicts energetic particle radiation before it impacts
-critical satellite systems using LSTM Neural Networks and NASA
-space weather datasets.
-
-</p>
-
-<p>
-
-The goal is to improve mission planning,
-reduce satellite failures,
-and provide intelligent decision support
-for future space missions.
-
-</p>
+</div>
 
 </div>
 
@@ -465,78 +190,105 @@ for future space missions.
 
 </section>
 
-<!-- ===== PART 3 STARTS BELOW ===== -->
- <!-- ===========================
-        TEAM
-============================ -->
+<!-- ===== PART 2 STARTS HERE ===== -->
+ <!-- ================= MISSION ================= -->
 
-<section class="section">
+<section id="mission">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<h2>Meet Team Pulse X</h2>
+<span class="section-tag">
 
-<p>Building AI for the Future of Space Missions</p>
+MISSION
 
-</div>
+</span>
 
-<div class="row g-4">
+<h2>
 
-<div class="col-md-3">
+Turning Space Weather Data into Mission Intelligence
 
-<div class="feature-card text-center">
+</h2>
 
-<h2>👨‍💻</h2>
+<p>
 
-<h4>Samyak</h4>
+CosmoShield AI transforms historical space weather observations
+into actionable radiation forecasts, enabling satellite operators
+to anticipate hazardous conditions before they impact critical systems.
 
-<p>Backend & AI/ML Engineer</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="feature-card text-center">
-
-<h2>💻</h2>
-
-<h4>Aaryan</h4>
-
-<p>Frontend Developer</p>
+</p>
 
 </div>
 
-</div>
+<div class="mission-grid">
 
-<div class="col-md-3">
+<div class="glass-card">
 
-<div class="feature-card text-center">
+<div class="card-number">
 
-<h2>🎨</h2>
-
-<h4>Shreya</h4>
-
-<p>UI/UX & QA</p>
+01
 
 </div>
 
+<h3>
+
+Predict
+
+</h3>
+
+<p>
+
+Analyze historical solar wind and interplanetary magnetic field
+measurements to forecast energetic particle radiation.
+
+</p>
+
 </div>
 
-<div class="col-md-3">
+<div class="glass-card">
 
-<div class="feature-card text-center">
+<div class="card-number">
 
-<h2>📄</h2>
-
-<h4>Shravani</h4>
-
-<p>Documentation & Research</p>
+02
 
 </div>
+
+<h3>
+
+Assess
+
+</h3>
+
+<p>
+
+Evaluate the predicted radiation level and classify mission risk
+for operational awareness.
+
+</p>
+
+</div>
+
+<div class="glass-card">
+
+<div class="card-number">
+
+03
+
+</div>
+
+<h3>
+
+Support
+
+</h3>
+
+<p>
+
+Provide clear AI-driven insights that assist operators in making
+timely satellite protection decisions.
+
+</p>
 
 </div>
 
@@ -546,33 +298,286 @@ for future space missions.
 
 </section>
 
-<!-- ===========================
-        FOOTER
-============================ -->
+<!-- ================= WORKFLOW ================= -->
+
+<section id="workflow">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-tag">
+
+AI WORKFLOW
+
+</span>
+
+<h2>
+
+From Space Data to Intelligent Prediction
+
+</h2>
+</div>
+
+<div class="workflow">
+
+<div class="workflow-item">
+
+<div class="workflow-circle">
+
+01
+
+</div>
+
+<h4>
+
+Solar Activity
+
+</h4>
+
+</div>
+
+<div class="workflow-line"></div>
+
+<div class="workflow-item">
+
+<div class="workflow-circle">
+
+02
+
+</div>
+
+<h4>
+
+NASA OMNI Data
+
+</h4>
+
+</div>
+
+<div class="workflow-line"></div>
+
+<div class="workflow-item">
+
+<div class="workflow-circle">
+
+03
+
+</div>
+
+<h4>
+
+Data Processing
+
+</h4>
+
+</div>
+
+<div class="workflow-line"></div>
+
+<div class="workflow-item">
+
+<div class="workflow-circle">
+
+04
+
+</div>
+
+<h4>
+
+LSTM Model
+
+</h4>
+
+</div>
+
+<div class="workflow-line"></div>
+
+<div class="workflow-item">
+
+<div class="workflow-circle">
+
+05
+
+</div>
+
+<h4>
+
+Risk Prediction
+
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= WHY IT MATTERS ================= -->
+
+<section id="importance">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-tag">
+
+WHY COSMOSHIELD
+
+</span>
+
+<h2>
+
+Built for Critical Satellite Operations
+
+</h2>
+
+<p>
+
+Space weather events can affect satellite communication,
+navigation systems, and onboard electronics.
+CosmoShield AI provides early prediction support,
+helping operators prepare before radiation levels become critical.
+
+</p>
+
+</div>
+
+<div class="importance-grid">
+
+<div class="importance-card">
+
+<div class="importance-title">
+
+Early Forecast
+
+</div>
+
+<p>
+
+Forecast energetic particle activity before
+its operational impact.
+
+</p>
+
+</div>
+
+<div class="importance-card">
+
+<div class="importance-title">
+
+Mission Safety
+
+</div>
+
+<p>
+
+Support informed operational decisions during
+elevated space weather conditions.
+
+</p>
+
+</div>
+
+<div class="importance-card">
+
+<div class="importance-title">
+
+Decision Support
+
+</div>
+
+<p>
+
+Provide AI-assisted insights through
+interpretable prediction outputs.
+
+</p>
+
+</div>
+
+<div class="importance-card">
+
+<div class="importance-title">
+
+Operational Awareness
+
+</div>
+
+<p>
+
+Transform raw observations into actionable
+mission intelligence.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="about-box">
+
+<span class="section-tag">
+
+ABOUT
+
+</span>
+
+<h2>
+
+Intelligence for Space Weather Prediction
+
+</h2>
+
+<p>
+
+CosmoShield AI is an intelligent prediction platform developed
+to estimate energetic particle radiation using historical
+space weather observations and deep learning.
+
+The system combines scientific datasets with artificial
+intelligence to provide reliable risk assessment that
+supports safer satellite operations and mission planning.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 <footer>
 
 <div class="container">
 
-<h3>🚀 CosmoShield AI</h3>
+<h3>
 
-<p class="mt-3">
+CosmoShield AI
 
-AI Powered Space Weather Prediction Platform
+</h3>
+
+<p>
+
+Built by Team Pulse X
 
 </p>
 
 <p>
 
-Developed for BAH Hackathon 2026
-
-</p>
-
-<hr>
-
-<p>
-
-© 2026 Team Pulse X • Built with ❤️ using AI, NASA Data & LSTM
+© 2026 All Rights Reserved
 
 </p>
 
@@ -583,4 +588,5 @@ Developed for BAH Hackathon 2026
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
