@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>CosmoShield AI Dashboard</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+href="{{ url_for('static', filename='css/dashboard.css') }}"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="container-fluid dashboard-container">
+
+<div class="brand">
+
+<img
+src="{{ url_for('static', filename='images/logo.png') }}"
+alt="CosmoShield AI">
+
+<div>
+
+<h3>CosmoShield AI</h3>
+
+<span>Space Weather Intelligence Platform</span>
+
+</div>
+
+</div>
+
+<div class="topbar-right">
+
+<div class="status">
+
+<span class="status-dot"></span>
+
+System Online
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container dashboard-container">
+
+<h1>
+
+Space Weather Intelligence Dashboard
+
+</h1>
+
+<p>
+
+Monitor space weather parameters,
+predict energetic particle radiation,
+and assess satellite mission risk using AI.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="container dashboard-container">
+
+<div class="stats-grid">
+<div class="stat-card">
+
+    <div class="stat-label">
+
+        Radiation Level
+
+    </div>
+
+    <div
+        class="stat-value"
+        id="radiationValue">
+
+        ---
+
+    </div>
+
+    <div class="stat-footer">
+
+        MeV
+
+    </div>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="stat-label">
+
+        Mission Risk
+
+    </div>
+
+    <div
+        class="stat-value risk-low"
+        id="riskValue">
+
+        LOW
+
+    </div>
+
+    <div class="stat-footer">
+
+        Live Assessment
+
+    </div>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="stat-label">
+
+        AI Model
+
+    </div>
+
+    <div
+        class="stat-value"
+        id="modelValue">
+
+        LSTM
+
+    </div>
+
+    <div class="stat-footer">
+
+        Prediction Engine
+
+    </div>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="stat-label">
+
+        Confidence
+
+    </div>
+
+    <div
+        class="stat-value"
+        id="confidenceValue">
+
+        97%
+
+    </div>
+
+    <div class="stat-footer">
+
+        Estimated Accuracy
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="dashboard-main">
+
+<div class="container dashboard-container">
+
+<div class="dashboard-grid">
+<!-- ==========================
+MISSION INPUT PANEL
+========================== -->
+
+<div class="panel glass">
+
+<div class="panel-header">
+
+<h2>Mission Input</h2>
+
+<p>
+
+Enter real-time space weather parameters for AI analysis.
+
+</p>
+
+</div>
+
+<form id="predictionForm">
+
+<div class="form-grid">
+
+<div class="input-group">
+
+<label>Satellite Name</label>
+
+<input
+type="text"
+id="satellite"
+placeholder="e.g. GSAT-30"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>Particle Energy (MeV)</label>
+
+<input
+type="number"
+step="0.01"
+id="energy"
+placeholder="10.5"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>IMF</label>
+
+<input
+type="number"
+step="0.01"
+id="imf"
+placeholder="4.52">
+
+</div>
+
+<div class="input-group">
+
+<label>Bx</label>
+
+<input
+type="number"
+step="0.01"
+id="bx"
+placeholder="-2.10">
+
+</div>
+
+<div class="input-group">
+
+<label>By</label>
+
+<input
+type="number"
+step="0.01"
+id="by"
+placeholder="1.80">
+
+</div>
+
+<div class="input-group">
+
+<label>Bz</label>
+
+<input
+type="number"
+step="0.01"
+id="bz"
+placeholder="-0.30">
+
+</div>
+
+<div class="input-group">
+
+<label>Solar Wind Speed</label>
+
+<input
+type="number"
+step="0.1"
+id="speed"
+placeholder="420">
+
+</div>
+
+<div class="input-group">
+
+<label>Density</label>
+
+<input
+type="number"
+step="0.1"
+id="density"
+placeholder="8.5">
+
+</div>
+
+<div class="input-group full-width">
+
+<label>Temperature</label>
+
+<input
+type="number"
+step="0.1"
+id="temperature"
+placeholder="250000">
+
+</div>
+
+</div>
+
+<button
+type="submit"
+class="predict-btn">
+
+Analyze Space Weather
+
+</button>
+
+</form>
+
+</div>
+<!-- ==========================
+LIVE RESULT
+========================== -->
+
+<div class="panel glass">
+
+<div class="panel-header">
+
+<h2>Live Prediction</h2>
+
+<p>
+
+Artificial Intelligence Prediction Output
+
+</p>
+
+</div>
+
+<div class="prediction-box">
+
+<div class="prediction-value"
+id="predictionValue">
+
+---
+
+</div>
+
+<div class="prediction-unit">
+
+MeV
+
+</div>
+
+<div
+class="prediction-risk low"
+id="predictionRisk">
+
+Awaiting Prediction
+
+</div>
+
+<div class="prediction-model">
+
+Model :
+<span id="predictionModel">
+
+LSTM
+
+</span>
+
+</div>
+
+<div class="prediction-time">
+
+Last Update :
+<span id="predictionTime">
+
+--
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================
+RADIATION TREND
+========================== -->
+
+<section class="chart-section">
+
+<div class="container dashboard-container">
+
+<div class="glass">
+
+<div class="panel-header">
+
+<h2>Radiation Trend</h2>
+
+<p>
+
+Historical prediction trend generated by the AI model.
+
+</p>
+
+</div>
+
+<canvas id="radiationChart"></canvas>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+PREDICTION HISTORY
+========================== -->
+
+<section class="history-section">
+
+<div class="container dashboard-container">
+
+<div class="glass">
+
+<div class="panel-header">
+
+<h2>Prediction History</h2>
+
+<p>
+
+Latest AI predictions stored in the local database.
+
+</p>
+
+</div>
+
+<div class="table-responsive">
+
+<table class="history-table">
+
+<thead>
+
+<tr>
+
+<th>Time</th>
+
+<th>Satellite</th>
+
+<th>Radiation</th>
+
+<th>Risk</th>
+
+<th>Model</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyBody">
+
+<tr>
+
+<td colspan="5">
+
+No prediction available.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+
+</html>

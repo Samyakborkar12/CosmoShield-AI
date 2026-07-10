@@ -782,7 +782,7 @@ font-weight:700;
 
 background:linear-gradient(135deg,#38BDF8,#8B5CF6);
 
--webkit-background-clip:text;
+ -webkit-background-clip :text;
 
 -webkit-text-fill-color:transparent;
 
