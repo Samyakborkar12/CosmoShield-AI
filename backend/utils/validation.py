@@ -10,6 +10,17 @@ REQUIRED_FIELDS = [
     "temperature"
 ]
 
+NUMERIC_FIELDS = [
+    "energy",
+    "imf",
+    "bx",
+    "by",
+    "bz",
+    "speed",
+    "density",
+    "temperature"
+]
+
 
 def validate_input(data):
 
@@ -21,24 +32,15 @@ def validate_input(data):
         if field not in data:
             return False, f"Missing field: {field}"
 
-    numeric_fields = [
-        "energy",
-        "imf",
-        "bx",
-        "by",
-        "bz",
-        "speed",
-        "density",
-        "temperature"
-    ]
+    if not str(data["satellite"]).strip():
+        return False, "Satellite name cannot be empty."
 
-    for field in numeric_fields:
+    for field in NUMERIC_FIELDS:
 
         try:
             data[field] = float(data[field])
 
         except (ValueError, TypeError):
-
-            return False, f"{field} must be numeric."
+            return False, f"{field} must be a valid number."
 
     return True, data
