@@ -765,3 +765,308 @@ background:rgba(56,189,248,.05);
 overflow-x:auto;
 
 }
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero {
+
+    position: relative;
+    overflow: hidden;
+
+    min-height: 92vh;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at top left,#1d4ed822 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#7c3aed22 0%,transparent 35%),
+        linear-gradient(180deg,#050816,#0a1020);
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(#ffffff15 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.30;
+
+    pointer-events:none;
+
+}
+
+.hero-grid{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+
+    1.2fr
+    1fr
+    .9fr;
+
+    gap:40px;
+
+    align-items:center;
+
+    z-index:2;
+
+}
+.hero-left h1{
+
+    color:white;
+
+    font-size:58px;
+
+    line-height:1.1;
+
+    font-weight:700;
+
+    margin-bottom:24px;
+
+}
+
+.hero-left p{
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:580px;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    color:#38bdf8;
+
+    border:1px solid rgba(56,189,248,.35);
+
+    background:rgba(56,189,248,.08);
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+}
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+.primary-btn{
+
+    border:none;
+
+    padding:16px 30px;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.secondary-btn{
+
+    padding:16px 30px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:transparent;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+    background:white;
+
+    color:#050816;
+
+}
+.hero-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#earthContainer{
+
+    width:380px;
+
+    height:380px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:180px;
+
+    background:
+
+    radial-gradient(circle,#1d4ed822,transparent);
+
+    animation:floatEarth 5s ease-in-out infinite;
+
+}
+.hero-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.mission-card{
+
+    padding:24px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.mission-card h4{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+    margin-bottom:12px;
+
+}
+
+.mission-card span{
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+.horizon-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.horizon-buttons button{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    background:#172036;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.horizon-buttons button.active{
+
+    background:#2563eb;
+
+}
+
+.horizon-buttons button:hover{
+
+    background:#3b82f6;
+
+}
+.online{
+
+    color:#22c55e !important;
+
+    font-weight:700;
+
+}
+@keyframes floatEarth{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
