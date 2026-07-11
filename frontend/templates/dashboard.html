@@ -186,113 +186,87 @@ System Online
 
 </section>
 
-<section class="stats">
+<section class="overview">
 
-<div class="container dashboard-container">
+    <div class="container dashboard-container">
 
-<div class="stats-grid">
-<div class="stat-card">
+        <div class="overview-grid">
 
-    <div class="stat-label">
+            <div class="overview-card">
 
-        Radiation Level
+                <div class="overview-icon">🛰</div>
 
-    </div>
+                <div class="overview-title">
+                    Current Mission
+                </div>
 
-    <div
-        class="stat-value"
-        id="radiationValue">
+                <div class="overview-value" id="missionName">
+                    GSAT-30
+                </div>
 
-        ---
+                <div class="overview-status online">
+                    ● Active
+                </div>
 
-    </div>
+            </div>
 
-    <div class="stat-footer">
+            <div class="overview-card">
 
-        MeV
+                <div class="overview-icon">☀️</div>
 
-    </div>
+                <div class="overview-title">
+                    Solar Activity
+                </div>
 
-</div>
+                <div class="overview-value" id="solarActivity">
+                    Moderate
+                </div>
 
+                <div class="overview-status">
+                    Live Monitoring
+                </div>
 
-<div class="stat-card">
+            </div>
 
-    <div class="stat-label">
+            <div class="overview-card">
 
-        Mission Risk
+                <div class="overview-icon">🌍</div>
 
-    </div>
+                <div class="overview-title">
+                    Radiation Level
+                </div>
 
-    <div
-        class="stat-value risk-low"
-        id="riskValue">
+                <div class="overview-value" id="radiationValue">
+                    ---
+                </div>
 
-        LOW
+                <div class="overview-status">
+                    MeV
+                </div>
 
-    </div>
+            </div>
 
-    <div class="stat-footer">
+            <div class="overview-card">
 
-        Live Assessment
+                <div class="overview-icon">🤖</div>
 
-    </div>
+                <div class="overview-title">
+                    AI Engine
+                </div>
 
-</div>
+                <div class="overview-value">
+                    LSTM
+                </div>
 
+                <div class="overview-status online">
+                    ● ONLINE
+                </div>
 
-<div class="stat-card">
+            </div>
 
-    <div class="stat-label">
-
-        AI Model
-
-    </div>
-
-    <div
-        class="stat-value"
-        id="modelValue">
-
-        LSTM
-
-    </div>
-
-    <div class="stat-footer">
-
-        Prediction Engine
-
-    </div>
-
-</div>
-
-
-<div class="stat-card">
-
-    <div class="stat-label">
-
-        Confidence
+        </div>
 
     </div>
-
-    <div
-        class="stat-value"
-        id="confidenceValue">
-
-        97%
-
-    </div>
-
-    <div class="stat-footer">
-
-        Estimated Accuracy
-
-    </div>
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -618,6 +592,9 @@ No prediction available.
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.min.js"></script>
+<script src="{{ url_for('static', filename='js/earth.js') }}"></script>
 
 </body>
 
