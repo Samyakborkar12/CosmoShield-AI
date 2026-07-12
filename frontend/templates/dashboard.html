@@ -8,7 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>CosmoShield AI Dashboard</title>
+<title>CosmoShield AI | Space Weather Intelligence</title>
 
 <link
 href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -26,9 +26,13 @@ rel="stylesheet">
 
 <body>
 
+<!-- ==========================================
+TOPBAR
+========================================== -->
+
 <header class="topbar">
 
-<div class="container-fluid dashboard-container">
+<div class="container dashboard-container">
 
 <div class="brand">
 
@@ -62,116 +66,153 @@ System Online
 
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- ==========================================
+HERO
+========================================== -->
 
 <section class="hero">
 
-    <div class="hero-overlay"></div>
+<div class="hero-overlay"></div>
 
-    <div class="container dashboard-container hero-grid">
+<div class="container dashboard-container hero-grid">
 
-        <!-- LEFT -->
+<!-- LEFT -->
 
-        <div class="hero-left">
+<div class="hero-left">
 
-            <div class="hero-badge">
-                AI POWERED SPACE WEATHER
-            </div>
+<div class="hero-badge">
 
-            <h1>
-                Protect Satellites with
-                Intelligent Space Weather
-                Prediction
-            </h1>
+AI POWERED SPACE WEATHER
 
-            <p>
+</div>
 
-                CosmoShield AI continuously monitors solar activity,
-                predicts energetic particle radiation,
-                and helps satellite operators detect dangerous
-                space weather before it becomes critical.
+<h1>
 
-            </p>
+Protect Satellites with
 
-            <div class="hero-buttons">
+Artificial Intelligence
 
-                <button class="primary-btn">
-                    🚀 Analyze Mission
-                </button>
+</h1>
 
-                <button class="secondary-btn">
-                    📊 Prediction History
-                </button>
+<p>
 
-            </div>
+Monitor Solar Wind, IMF, Proton Flux,
+and predict future radiation levels
+using our LSTM-based AI engine.
 
-        </div>
+Designed for mission planning,
+satellite protection,
+and space weather awareness.
 
-        <!-- CENTER -->
+</p>
 
-        <div class="hero-center">
+<div class="hero-buttons">
 
-            <div id="earthContainer">
+<button
+class="primary-btn">
 
-                🌍
+🚀 Analyze Mission
 
-            </div>
+</button>
 
-        </div>
+<button
+class="secondary-btn">
 
-        <!-- RIGHT -->
+📊 Prediction History
 
-        <div class="hero-right">
+</button>
 
-            <div class="mission-card">
+</div>
 
-                <h4>Prediction Horizon</h4>
+</div>
 
-                <div class="horizon-buttons">
+<!-- CENTER -->
 
-                    <button class="active">
-                        45 Minutes
-                    </button>
+<div class="hero-center">
 
-                    <button>
-                        6 Hours
-                    </button>
+<div id="earthContainer">
 
-                    <button>
-                        12 Hours
-                    </button>
+</div>
 
-                </div>
+</div>
 
-            </div>
+<!-- RIGHT -->
 
-            <div class="mission-card">
+<div class="hero-right">
 
-                <h4>System Status</h4>
+<div class="mission-card">
 
-                <span class="online">
-                    ● ONLINE
-                </span>
+<h4>
 
-            </div>
+Prediction Horizon
 
-            <div class="mission-card">
+</h4>
 
-                <h4>Current Mission</h4>
+<div class="horizon-buttons">
 
-                <span id="currentMission">
-                    GSAT-30
-                </span>
+<button class="active">
 
-            </div>
+45 Minutes
 
-        </div>
+</button>
 
-    </div>
+<button>
+
+6 Hours
+
+</button>
+
+<button>
+
+12 Hours
+
+</button>
+
+</div>
+
+</div>
+
+<div class="mission-card">
+
+<h4>
+
+System Status
+
+</h4>
+
+<span class="online">
+
+● ONLINE
+
+</span>
+
+</div>
+
+<div class="mission-card">
+
+<h4>
+
+Current Mission
+
+</h4>
+
+<span id="currentMission">
+
+GSAT-30
+
+</span>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- ================= OVERVIEW ================= -->
+<!-- ==========================================
+OVERVIEW
+========================================== -->
 
 <section class="overview">
 
@@ -179,68 +220,148 @@ System Online
 
 <div class="overview-grid">
 
+<!-- CARD 1 -->
+
 <div class="overview-card">
 
 <div class="overview-icon">
+
 🛰️
+
 </div>
 
 <div class="overview-title">
-Current Mission
+
+Mission
+
 </div>
 
-<div class="overview-value" id="overviewMission">
+<div
+class="overview-value"
+id="overviewMission">
 
 GSAT-30
 
 </div>
 
+<div class="overview-status">
+
+Active Satellite
+
 </div>
+
+</div>
+
+<!-- CARD 2 -->
 
 <div class="overview-card">
 
 <div class="overview-icon">
+
 ☀️
+
 </div>
 
 <div class="overview-title">
+
 Solar Activity
-</div>
-
-<div class="overview-value">
-
-Moderate
 
 </div>
 
+<div
+class="overview-value"
+id="solarActivity">
+
+LOW
+
 </div>
+
+<div class="overview-status">
+
+Real-Time Assessment
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
 
 <div class="overview-card">
 
 <div class="overview-icon">
-🌎
+
+🌍
+
 </div>
 
 <div class="overview-title">
-Radiation Level
+
+Radiation Flux
+
 </div>
 
-<div class="overview-value" id="overviewRadiation">
+<div
+class="overview-value"
+id="overviewRadiation">
 
 ---
 
 </div>
 
+<div class="overview-status">
+
+MeV
+
 </div>
+
+</div>
+
+<!-- CARD 4 -->
 
 <div class="overview-card">
 
 <div class="overview-icon">
-🤖
+
+⚠️
+
 </div>
 
 <div class="overview-title">
+
+Mission Risk
+
+</div>
+
+<div
+class="overview-value"
+id="overviewRisk">
+
+LOW
+
+</div>
+
+<div class="overview-status">
+
+AI Prediction
+
+</div>
+
+</div>
+
+<!-- CARD 5 -->
+
+<div class="overview-card">
+
+<div class="overview-icon">
+
+🤖
+
+</div>
+
+<div class="overview-title">
+
 AI Engine
+
 </div>
 
 <div class="overview-value">
@@ -249,6 +370,92 @@ LSTM
 
 </div>
 
+<div class="overview-status">
+
+Deep Learning
+
+</div>
+
+</div>
+
+<!-- CARD 6 -->
+
+<div class="overview-card">
+
+<div class="overview-icon">
+
+📡
+
+</div>
+
+<div class="overview-title">
+
+Solar Wind
+
+</div>
+
+<div
+class="overview-value"
+id="overviewWind">
+
+---
+
+</div>
+
+<div class="overview-status">
+
+km/s
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================================
+LIVE SPACE WEATHER ALERT
+========================================== -->
+
+<section class="alert-section">
+
+<div class="container dashboard-container">
+
+<div class="space-alert" id="spaceAlert">
+
+<div class="alert-left">
+
+<div class="alert-icon">
+🟢
+</div>
+
+<div>
+
+<h4>
+SPACE WEATHER STATUS
+</h4>
+
+<p id="alertText">
+
+No geomagnetic storm detected.
+Space weather conditions are stable.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="alert-right">
+
+<span id="lastUpdate">
+
+Live Monitoring
+
+</span>
+
 </div>
 
 </div>
@@ -257,24 +464,33 @@ LSTM
 
 </section>
 
+<!-- ==========================================
+MAIN DASHBOARD
+========================================== -->
+
 <section class="dashboard-main">
 
 <div class="container dashboard-container">
 
 <div class="dashboard-grid">
-<!-- ==========================
-MISSION INPUT PANEL
-========================== -->
 
-<div class="panel glass">
+<!-- ======================================
+MISSION INPUT
+====================================== -->
+
+<div class="glass">
 
 <div class="panel-header">
 
-<h2>Mission Input</h2>
+<h2>
+
+Mission Parameters
+
+</h2>
 
 <p>
 
-Enter real-time space weather parameters for AI analysis.
+Enter real-time solar weather values for AI prediction.
 
 </p>
 
@@ -286,110 +502,138 @@ Enter real-time space weather parameters for AI analysis.
 
 <div class="input-group">
 
-<label>Satellite Name</label>
+<label>
+
+Satellite Name
+
+</label>
 
 <input
-type="text"
 id="satellite"
-placeholder="e.g. GSAT-30"
+type="text"
+placeholder="GSAT-30"
 required>
 
 </div>
 
 <div class="input-group">
 
-<label>Particle Energy (MeV)</label>
+<label>
+
+Particle Energy (MeV)
+
+</label>
 
 <input
-type="number"
-step="0.01"
 id="energy"
-placeholder="10.5"
-required>
+type="number"
+step="0.01"
+placeholder="10">
 
 </div>
 
 <div class="input-group">
 
-<label>IMF</label>
+<label>
+
+IMF
+
+</label>
 
 <input
-type="number"
-step="0.01"
 id="imf"
-placeholder="4.52">
+type="number"
+step="0.01">
 
 </div>
 
 <div class="input-group">
 
-<label>Bx</label>
+<label>
+
+Bx
+
+</label>
 
 <input
-type="number"
-step="0.01"
 id="bx"
-placeholder="-2.10">
+type="number"
+step="0.01">
 
 </div>
 
 <div class="input-group">
 
-<label>By</label>
+<label>
+
+By
+
+</label>
 
 <input
-type="number"
-step="0.01"
 id="by"
-placeholder="1.80">
+type="number"
+step="0.01">
 
 </div>
 
 <div class="input-group">
 
-<label>Bz</label>
+<label>
+
+Bz
+
+</label>
 
 <input
-type="number"
-step="0.01"
 id="bz"
-placeholder="-0.30">
+type="number"
+step="0.01">
 
 </div>
 
 <div class="input-group">
 
-<label>Solar Wind Speed</label>
+<label>
+
+Solar Wind Speed
+
+</label>
 
 <input
-type="number"
-step="0.1"
 id="speed"
-placeholder="420">
+type="number"
+step="0.1">
 
 </div>
 
 <div class="input-group">
 
-<label>Density</label>
+<label>
+
+Particle Density
+
+</label>
 
 <input
-type="number"
-step="0.1"
 id="density"
-placeholder="8.5">
+type="number"
+step="0.1">
 
 </div>
 
 <div class="input-group full-width">
 
-<label>Temperature</label>
+<label>
+
+Temperature
+
+</label>
 
 <input
-type="number"
-step="0.1"
 id="temperature"
-placeholder="250000">
+type="number"
+step="0.1">
 
 </div>
 
@@ -399,26 +643,31 @@ placeholder="250000">
 type="submit"
 class="predict-btn">
 
-Analyze Space Weather
+🚀 Analyze Space Weather
 
 </button>
 
 </form>
 
 </div>
-<!-- ==========================
-LIVE RESULT
-========================== -->
 
-<div class="panel glass">
+<!-- ======================================
+AI RESULT PANEL
+====================================== -->
+
+<div class="glass">
 
 <div class="panel-header">
 
-<h2>Live Prediction</h2>
+<h2>
+
+AI Prediction
+
+</h2>
 
 <p>
 
-Artificial Intelligence Prediction Output
+Live Deep Learning Prediction
 
 </p>
 
@@ -426,8 +675,15 @@ Artificial Intelligence Prediction Output
 
 <div class="prediction-box">
 
-<div class="prediction-value"
-id="predictionValue">
+<div class="prediction-title">
+
+Radiation Prediction
+
+</div>
+
+<div
+id="predictionValue"
+class="prediction-value">
 
 ---
 
@@ -440,32 +696,80 @@ MeV
 </div>
 
 <div
-class="prediction-risk low"
-id="predictionRisk">
+id="predictionRisk"
+class="prediction-risk low">
 
 Awaiting Prediction
 
 </div>
 
-<div class="prediction-model">
+<div class="prediction-divider"></div>
 
-Model :
-<span id="predictionModel">
+<div class="prediction-info">
+
+<div class="prediction-item">
+
+<span>
+
+Model
+
+</span>
+
+<strong id="predictionModel">
 
 LSTM
 
-</span>
+</strong>
 
 </div>
 
-<div class="prediction-time">
+<div class="prediction-item">
 
-Last Update :
-<span id="predictionTime">
+<span>
+
+Confidence
+
+</span>
+
+<strong id="confidenceValue">
+
+97%
+
+</strong>
+
+</div>
+
+<div class="prediction-item">
+
+<span>
+
+Prediction Horizon
+
+</span>
+
+<strong id="predictionHorizon">
+
+45 Minutes
+
+</strong>
+
+</div>
+
+<div class="prediction-item">
+
+<span>
+
+Updated
+
+</span>
+
+<strong id="predictionTime">
 
 --
 
-</span>
+</strong>
+
+</div>
 
 </div>
 
@@ -478,9 +782,142 @@ Last Update :
 </div>
 
 </section>
-<!-- ==========================
+
+<!-- ==========================================
+LIVE TELEMETRY
+========================================== -->
+
+<section class="telemetry-section">
+
+<div class="container dashboard-container">
+
+<div class="glass">
+
+<div class="panel-header">
+
+<h2>
+
+Live Space Telemetry
+
+</h2>
+
+<p>
+
+Current values being processed by the AI engine.
+
+</p>
+
+</div>
+
+<div class="telemetry-grid">
+
+<div class="telemetry-card">
+
+<h5>
+
+IMF
+
+</h5>
+
+<h2 id="telemetryIMF">
+
+--
+
+</h2>
+
+</div>
+
+<div class="telemetry-card">
+
+<h5>
+
+Solar Wind
+
+</h5>
+
+<h2 id="telemetrySpeed">
+
+--
+
+</h2>
+
+</div>
+
+<div class="telemetry-card">
+
+<h5>
+
+Density
+
+</h5>
+
+<h2 id="telemetryDensity">
+
+--
+
+</h2>
+
+</div>
+
+<div class="telemetry-card">
+
+<h5>
+
+Temperature
+
+</h5>
+
+<h2 id="telemetryTemp">
+
+--
+
+</h2>
+
+</div>
+
+<div class="telemetry-card">
+
+<h5>
+
+Particle Energy
+
+</h5>
+
+<h2 id="telemetryEnergy">
+
+--
+
+</h2>
+
+</div>
+
+<div class="telemetry-card">
+
+<h5>
+
+AI Status
+
+</h5>
+
+<h2 class="online">
+
+READY
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
 RADIATION TREND
-========================== -->
+========================================== -->
 
 <section class="chart-section">
 
@@ -490,11 +927,15 @@ RADIATION TREND
 
 <div class="panel-header">
 
-<h2>Radiation Trend</h2>
+<h2>
+
+Radiation Prediction Trend
+
+</h2>
 
 <p>
 
-Historical prediction trend generated by the AI model.
+Historical AI radiation prediction over time.
 
 </p>
 
@@ -508,9 +949,77 @@ Historical prediction trend generated by the AI model.
 
 </section>
 
-<!-- ==========================
+<!-- ==========================================
+SOLAR WIND CHART
+========================================== -->
+
+<section class="chart-section">
+
+<div class="container dashboard-container">
+
+<div class="glass">
+
+<div class="panel-header">
+
+<h2>
+
+Solar Wind Speed
+
+</h2>
+
+<p>
+
+Current solar wind variation monitored by AI.
+
+</p>
+
+</div>
+
+<canvas id="solarChart"></canvas>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+CONFIDENCE CHART
+========================================== -->
+
+<section class="chart-section">
+
+<div class="container dashboard-container">
+
+<div class="glass">
+
+<div class="panel-header">
+
+<h2>
+
+AI Confidence
+
+</h2>
+
+<p>
+
+Prediction confidence over recent inferences.
+
+</p>
+
+</div>
+
+<canvas id="confidenceChart"></canvas>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
 PREDICTION HISTORY
-========================== -->
+========================================== -->
 
 <section class="history-section">
 
@@ -520,11 +1029,15 @@ PREDICTION HISTORY
 
 <div class="panel-header">
 
-<h2>Prediction History</h2>
+<h2>
+
+Mission Prediction History
+
+</h2>
 
 <p>
 
-Latest AI predictions stored in the local database.
+Latest predictions generated by CosmoShield AI.
 
 </p>
 
@@ -542,6 +1055,8 @@ Latest AI predictions stored in the local database.
 
 <th>Satellite</th>
 
+<th>Energy</th>
+
 <th>Radiation</th>
 
 <th>Risk</th>
@@ -556,7 +1071,7 @@ Latest AI predictions stored in the local database.
 
 <tr>
 
-<td colspan="5">
+<td colspan="6">
 
 No prediction available.
 
@@ -576,11 +1091,141 @@ No prediction available.
 
 </section>
 
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer class="footer">
+
+<div class="container dashboard-container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+
+CosmoShield AI
+
+</h3>
+
+<p>
+
+AI-powered Space Weather Intelligence Platform
+
+built for satellite protection, radiation prediction,
+
+and mission planning.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Prediction Engine
+
+</h4>
+
+<ul>
+
+<li>LSTM Neural Network</li>
+
+<li>Deep Learning</li>
+
+<li>Sequence Forecasting</li>
+
+<li>Radiation Prediction</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Technology
+
+</h4>
+
+<ul>
+
+<li>Python</li>
+
+<li>TensorFlow</li>
+
+<li>Flask</li>
+
+<li>Chart.js</li>
+
+<li>Three.js</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Mission Status
+
+</h4>
+
+<p class="online">
+
+● System Operational
+
+</p>
+
+<p>
+
+AI Engine Running
+
+</p>
+
+<p>
+
+Last Sync:
+
+<span id="footerTime">
+
+--
+
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="footer-bottom">
+
+© 2026 CosmoShield AI
+
+Designed by Team Pulse X
+</div>
+
+</div>
+
+</footer>
+
+<!-- ==========================================
+SCRIPTS
+========================================== -->
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.min.js"></script>
 
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.min.js"></script>
 <script src="{{ url_for('static', filename='js/earth.js') }}"></script>
 
 </body>
