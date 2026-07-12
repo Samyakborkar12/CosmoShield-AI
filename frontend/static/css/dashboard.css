@@ -226,7 +226,7 @@ overflow:hidden;
 
 content:"";
 
-position:absolute;
+position:relative;
 
 width:180px;
 
@@ -531,7 +531,7 @@ justify-content:center;
 
 height:100%;
 
-min-height:460px;
+min-height:75vh;
 
 text-align:center;
 
@@ -774,7 +774,9 @@ overflow-x:auto;
     position: relative;
     overflow: hidden;
 
-    min-height: 92vh;
+    min-height:auto;
+    padding:90px 0 140px;
+
 
     display: flex;
     align-items: center;
@@ -805,24 +807,19 @@ overflow-x:auto;
 }
 
 .hero-grid{
-
-    position:relative;
-
+    
     display:grid;
 
     grid-template-columns:
+    1.3fr
+    .9fr
+    .8fr;
 
-    1.2fr
-    1fr
-    .9fr;
-
-    gap:40px;
+    gap:45px;
 
     align-items:center;
 
-    z-index:2;
-
-}
+ }
 .hero-left h1{
 
     color:white;
@@ -941,9 +938,11 @@ overflow-x:auto;
 
 #earthContainer{
 
-    width:380px;
+    width:320px;
 
-    height:380px;
+    height:320px;
+
+    margin: auto;
 
     border-radius:50%;
 
@@ -964,17 +963,22 @@ overflow-x:auto;
 }
 .hero-right{
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    gap:20px;
+justify-content:center;
+
+gap:18px;
+
+height:100%;
+
 
 }
 
 .mission-card{
 
-    padding:24px;
+    padding: 20px;
 
     border-radius:20px;
 
@@ -1076,9 +1080,13 @@ overflow-x:auto;
 
 .overview{
 
-    margin-top:-70px;
-    position:relative;
-    z-index:5;
+margin-top:40px;
+
+padding-bottom:40px;
+
+position:relative;
+
+z-index:5;
 
 }
 

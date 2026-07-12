@@ -62,121 +62,106 @@ System Online
 
 </header>
 
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
     <div class="hero-overlay"></div>
 
-    <div class="container dashboard-container">
+    <div class="container dashboard-container hero-grid">
 
-        <div class="hero-grid">
+        <!-- LEFT -->
 
-            <!-- LEFT -->
+        <div class="hero-left">
 
-            <div class="hero-left">
+            <div class="hero-badge">
+                AI POWERED SPACE WEATHER
+            </div>
 
-                <span class="hero-badge">
-                    ● MISSION CONTROL
+            <h1>
+                Protect Satellites with
+                Intelligent Space Weather
+                Prediction
+            </h1>
+
+            <p>
+
+                CosmoShield AI continuously monitors solar activity,
+                predicts energetic particle radiation,
+                and helps satellite operators detect dangerous
+                space weather before it becomes critical.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn">
+                    🚀 Analyze Mission
+                </button>
+
+                <button class="secondary-btn">
+                    📊 Prediction History
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CENTER -->
+
+        <div class="hero-center">
+
+            <div id="earthContainer">
+
+                🌍
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="hero-right">
+
+            <div class="mission-card">
+
+                <h4>Prediction Horizon</h4>
+
+                <div class="horizon-buttons">
+
+                    <button class="active">
+                        45 Minutes
+                    </button>
+
+                    <button>
+                        6 Hours
+                    </button>
+
+                    <button>
+                        12 Hours
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="mission-card">
+
+                <h4>System Status</h4>
+
+                <span class="online">
+                    ● ONLINE
                 </span>
 
-                <h1>
-                    Space Weather
-                    Intelligence Platform
-                </h1>
-
-                <p>
-
-                    AI-powered monitoring system designed to
-                    analyze solar activity, predict energetic
-                    particle radiation, and protect satellite
-                    missions using deep learning.
-
-                </p>
-
-                <div class="hero-buttons">
-
-                    <button class="primary-btn">
-
-                        Analyze Mission
-
-                    </button>
-
-                    <button class="secondary-btn">
-
-                        View History
-
-                    </button>
-
-                </div>
-
             </div>
 
-            <!-- CENTER -->
+            <div class="mission-card">
 
-            <div class="hero-center">
+                <h4>Current Mission</h4>
 
-                <div id="earthContainer">
-
-                    🌍
-
-                </div>
-
-            </div>
-
-            <!-- RIGHT -->
-
-            <div class="hero-right">
-
-                <div class="mission-card">
-
-                    <h4>Current Mission</h4>
-
-                    <span id="currentSatellite">
-
-                        GSAT-30
-
-                    </span>
-
-                </div>
-
-                <div class="mission-card">
-
-                    <h4>Prediction Horizon</h4>
-
-                    <div class="horizon-buttons">
-
-                        <button class="active">
-
-                            45 Min
-
-                        </button>
-
-                        <button>
-
-                            6 Hours
-
-                        </button>
-
-                        <button>
-
-                            12 Hours
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div class="mission-card">
-
-                    <h4>System Status</h4>
-
-                    <span class="online">
-
-                        🟢 ONLINE
-
-                    </span>
-
-                </div>
+                <span id="currentMission">
+                    GSAT-30
+                </span>
 
             </div>
 
@@ -186,87 +171,89 @@ System Online
 
 </section>
 
+<!-- ================= OVERVIEW ================= -->
+
 <section class="overview">
 
-    <div class="container dashboard-container">
+<div class="container dashboard-container">
 
-        <div class="overview-grid">
+<div class="overview-grid">
 
-            <div class="overview-card">
+<div class="overview-card">
 
-                <div class="overview-icon">🛰</div>
+<div class="overview-icon">
+🛰️
+</div>
 
-                <div class="overview-title">
-                    Current Mission
-                </div>
+<div class="overview-title">
+Current Mission
+</div>
 
-                <div class="overview-value" id="missionName">
-                    GSAT-30
-                </div>
+<div class="overview-value" id="overviewMission">
 
-                <div class="overview-status online">
-                    ● Active
-                </div>
+GSAT-30
 
-            </div>
+</div>
 
-            <div class="overview-card">
+</div>
 
-                <div class="overview-icon">☀️</div>
+<div class="overview-card">
 
-                <div class="overview-title">
-                    Solar Activity
-                </div>
+<div class="overview-icon">
+☀️
+</div>
 
-                <div class="overview-value" id="solarActivity">
-                    Moderate
-                </div>
+<div class="overview-title">
+Solar Activity
+</div>
 
-                <div class="overview-status">
-                    Live Monitoring
-                </div>
+<div class="overview-value">
 
-            </div>
+Moderate
 
-            <div class="overview-card">
+</div>
 
-                <div class="overview-icon">🌍</div>
+</div>
 
-                <div class="overview-title">
-                    Radiation Level
-                </div>
+<div class="overview-card">
 
-                <div class="overview-value" id="radiationValue">
-                    ---
-                </div>
+<div class="overview-icon">
+🌎
+</div>
 
-                <div class="overview-status">
-                    MeV
-                </div>
+<div class="overview-title">
+Radiation Level
+</div>
 
-            </div>
+<div class="overview-value" id="overviewRadiation">
 
-            <div class="overview-card">
+---
 
-                <div class="overview-icon">🤖</div>
+</div>
 
-                <div class="overview-title">
-                    AI Engine
-                </div>
+</div>
 
-                <div class="overview-value">
-                    LSTM
-                </div>
+<div class="overview-card">
 
-                <div class="overview-status online">
-                    ● ONLINE
-                </div>
+<div class="overview-icon">
+🤖
+</div>
 
-            </div>
+<div class="overview-title">
+AI Engine
+</div>
 
-        </div>
+<div class="overview-value">
 
-    </div>
+LSTM
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
