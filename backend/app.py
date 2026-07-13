@@ -11,6 +11,7 @@ app = Flask(
     __name__,
     template_folder="../frontend/templates",
     static_folder="../frontend/static"
+    
 )
 
 initialize_database()
