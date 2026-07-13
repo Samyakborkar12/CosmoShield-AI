@@ -1,12 +1,9 @@
 def calculate_risk(flux):
 
-    if flux < 1:
-        return "Low"
+    if flux < 0.30:
+        return "LOW"
 
-    elif flux < 10:
-        return "Moderate"
+    elif flux < 0.45:
+        return "MEDIUM"
 
-    elif flux < 100:
-        return "High"
-
-    return "Extreme"
+    return "HIGH"
